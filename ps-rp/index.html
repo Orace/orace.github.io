@@ -49,14 +49,14 @@ html, body {
   </div>
   
   <input id='rangeInput' type='range' min='0' max='180' value='20' />
-</body>
-
-<script>
-  var armContainer = document.getElementById('armContainer');
-  var rangeInput = document.getElementById('rangeInput');
   
-  rangeInput.addEventListener('input', function() {
-    armContainer.style.transform=`rotate(${180 - rangeInput.value}deg)`
-  });
-</script>
+  <script>
+    var armContainer = document.getElementById('armContainer');
+    var rangeInput = document.getElementById('rangeInput');
+    
+    rangeInput.addEventListener('input', function() {
+      armContainer.style.transform=`rotate(${180 - rangeInput.value}deg)`
+    });
+  </script>
+</body>
 </html>
