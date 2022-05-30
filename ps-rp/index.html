@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<title>Pétanque Simulator - Rageux Production™</title>
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: min(50vh, 90vw);
+  height: min(75vh, 120vw);
+}
+
+.imageBase {
+  position: absolute;
+  width: 100%;
+  height: 100%;  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:url(base.jpg);
+}
+
+#armContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: 38% 27%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:url(arm.png);
+}
+
+#rangeInput {
+  width: 50vh;
+}
+
+</style>
+</head>
+
+<body>
+  <div class='container'>
+    <div class='imageBase'></div>
+    <div id='armContainer'></div>
+  </div>
+  
+  <input id='rangeInput' type='range' min='0' max='180' value='20' />
+</body>
+
+<script>
+  var armContainer = document.getElementById('armContainer');
+  var rangeInput = document.getElementById('rangeInput');
+  
+  rangeInput.addEventListener('input', function() {
+    armContainer.style.transform=`rotate(${180 - rangeInput.value}deg)`
+  });
+</script>
+</html>
